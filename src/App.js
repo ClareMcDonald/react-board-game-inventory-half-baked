@@ -23,9 +23,9 @@ export default function App() {
   // add a useEffect to get the user and inject the user object into state on load
   useEffect(() => {
     async function fetch() {
-      const user = await getUser();
+      const user = getUser();
       
-      if (user) setUser(user);
+      setUser(user);
     }
 
     fetch();
