@@ -44,12 +44,12 @@ export default function CreatePage() {
         <label>
             Title
           {/* on change, set the title in state */}
-          <input required name='title' onChange={e => setFormTitle(e.target.value)}/>
+          <input required name='title' onChange={e => setFormTitle(e.target.value)} value={formTitle}/>
         </label>
         <label>
             Genre
           {/* on change, set the genre in state */}
-          <select required onChange={e => setFormGenre(e.target.value)}>
+          <select required onChange={e => setFormGenre(e.target.value)} value={formGenre}>
             <option>Tile-laying</option>
             <option>Economic</option>
             <option>War</option>
@@ -62,22 +62,22 @@ export default function CreatePage() {
         <label>
             Designer
           {/* on change, set the designer in state */}
-          <input required name='designer' onChange={e => steformDesigner(e.target.value)}/>
+          <input required name='designer' onChange={e => steformDesigner(e.target.value)} value={formDesigner}/>
         </label>
         <label>
             Min Players
           {/* on change, set the min players in state */}
-          <input required name='min_players' onChange={e => setFormMinPlayers(e.target.value)} />
+          <input required name='min_players' onChange={e => setFormMinPlayers(e.target.value)} value={formMinPlayers}/>
         </label>
         <label>
             Max Players
           {/* on change, set the max players in state */}
-          <input required name='max_players' onChange={e => setFormMaxPlayers(e.target.value)} />
+          <input required name='max_players' onChange={e => setFormMaxPlayers(e.target.value)} value={formMaxPlayers} />
         </label>
         <label>
             Description
           {/* on change, set the description in state */}
-          <textarea required name='max_players' onChange={e => setFormDescription(e.target.value)} />
+          <textarea required name='max_players' onChange={e => setFormDescription(e.target.value)} value={formDescription}/>
         </label>
         <button>Create game</button>
       </form>
