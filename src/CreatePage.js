@@ -26,7 +26,7 @@ export default function CreatePage() {
     await createGame({
       title: formTitle,
       genre: formGenre,
-      desginer: formDesigner,
+      designer: formDesigner,
       description: formDescription,
       min_players: formMinPlayers,
       max_players: formMaxPlayers
