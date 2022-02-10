@@ -1,39 +1,55 @@
 import { useState } from 'react';
 import { createGame } from './services/fetch-utils';
+import { useHistory } from 'react-router-dom';
 
 export default function CreatePage() {
   // you'll need the history hook from react-router-dom to do your redirecting in the handleSubmit
-
+  const history = useHistory();
   // here's the state you'll need:
     // title;
+  const [formTitle, setFormTitle] = useState('');
     // genre;
+  const [formGenre, setFormGenre] = useState('');
     // designer;
+  const [formDesigner, steformDesigner] = useState('');
     // description;
+  const [formDescription, setFormDescription] = useState('');
     // minPlayers;
+  const [formMinPlayers, setFormMinPlayers] = useState('');
     // maxPlayers;
+  const [formMaxPlayers, setFormMaxPlayers] = useState('');
 
   async function handleSubmit(e) {
     e.preventDefault();
 
     // create a game
+    await createGame({
+      title: formTitle,
+      genre: formGenre,
+      desginer: formDesigner,
+      description: formDescription,
+      min_players: formMinPlayers,
+      max_players: formMaxPlayers
+    });
 
     // use history.push to send the user to the list page
+    history.push('/board-games');
   }
 
   return (
     <div className='create'>
       {/* on submit, call your handleSubmit function */}
-      <form>
+      <form onSubmit={handleSubmit}>
         <h2>Add board game</h2>
         <label>
             Title
           {/* on change, set the title in state */}
-          <input required name='title' />
+          <input required name='title' onChange={e => setFormTitle(e.target.value)}/>
         </label>
         <label>
             Genre
           {/* on change, set the genre in state */}
-          <select required>
+          <select required onChange={e => setFormGenre(e.target.value)}>
             <option>Tile-laying</option>
             <option>Economic</option>
             <option>War</option>
@@ -46,22 +62,22 @@ export default function CreatePage() {
         <label>
             Designer
           {/* on change, set the designer in state */}
-          <input required name='designer' />
+          <input required name='designer' onChange={e => steformDesigner(e.target.value)}/>
         </label>
         <label>
             Min Players
           {/* on change, set the min players in state */}
-          <input required name='min_players' />
+          <input required name='min_players' onChange={e => setFormMinPlayers(e.target.value)} />
         </label>
         <label>
             Max Players
           {/* on change, set the max players in state */}
-          <input required name='max_players' />
+          <input required name='max_players' onChange={e => setFormMaxPlayers(e.target.value)} />
         </label>
         <label>
             Description
           {/* on change, set the description in state */}
-          <textarea required name='max_players' />
+          <textarea required name='max_players' onChange={e => setFormDescription(e.target.value)} />
         </label>
         <button>Create game</button>
       </form>
