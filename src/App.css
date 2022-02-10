@@ -16,9 +16,10 @@ a {
 
 .App header {
   display: flex;
+  flex-direction: row;
   justify-content: center;
-  align-items: center;
-}
+  align-items: center; 
+} 
 
 .App header a {
   margin: 10px;
@@ -80,10 +81,6 @@ select {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-}
-
-.game {
-
 }
 
 .detail {

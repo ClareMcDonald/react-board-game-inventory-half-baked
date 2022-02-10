@@ -46,17 +46,11 @@ export default function App() {
           {/* if there is a user in state, render out a link to the board games list, the create page, and add a button to let the user logout */}
           {
             user && 
-            <ul>
-              <li>
-                <Link to="/board-games">List Page</Link>
-              </li>
-              <li>
-                <Link to="/create">Create Page</Link>
-              </li>
-              <li>
-                <button onClick={handleLogout}>Logout</button>
-              </li>
-            </ul>
+            <>
+              <NavLink to="/board-games">List Page</NavLink>
+              <NavLink to="/create">Create Page</NavLink>
+              <button onClick={handleLogout}>Logout</button>
+            </>
           }
         </header>
         <main>
