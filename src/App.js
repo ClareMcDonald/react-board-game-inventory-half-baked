@@ -6,7 +6,6 @@ import {
   NavLink,
   Route,
   Redirect,
-  Link
 } from 'react-router-dom';
 import AuthPage from './AuthPage';
 import DetailPage from './DetailPage';
